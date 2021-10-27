@@ -2,6 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import {} from 'react-bootstrap'
 import logo from '../Logo AGO.png'
+import { Link } from 'react-router-dom';
 
 function Header({className}) {
     return (
@@ -10,22 +11,22 @@ function Header({className}) {
                 <img src={logo} width="60" />
                 <label>Avo</label>
            </div>
-           <div className='HC col-lg-4 col-sm-12 col-md-12 p-0 row '>
+           <div className='HC col-lg-4 col-sm-12 p-0 row '>
                <div className='col-12 py-2' />
                 <div className='col-lg-3 col-sm-12 home m-0 p-0'>
-                    <label className='homeVer'>Home</label>
+                    <Link to="/" className='Linkto'><label className='homeVer'>Menu</label></Link>
                 </div> 
-                <div className='col-lg-6 col-sm-12 create m-0 p-0'>
-                    <label className='createVer'>Create menu</label>
+                <div className='col-lg-7 col-sm-12 create m-0 p-0'>
+                    <Link to="/CreateMenu" className='Linkto'><label className='createVer'>Create menu</label></Link>
                 </div>
             </div>
             <div className='div col m-0 p-4 d-flex justify-content-end'>
-                <div class="dropdown text-end p-4">
-                    <a href="#" class="d-block link-dark text-decoration-none dropdown-toggle" id="dropdownUser1" data-bs-toggle="dropdown" aria-expanded="false">
+                <div className="dropdown text-end p-4">
+                    <a href="#" className="d-block link-dark text-decoration-none dropdown-toggle" id="dropdownUser1" data-bs-toggle="dropdown" aria-expanded="false">
                         <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAUBJREFUSEvVlG1RQzEQRU8VAA4qgSoAHBQFgIOiAFAADhgc1AFFAUioA1oF7Vxmlwl5SfZNIT/Ir3aSt+fu3Y8Jnc+kc3zGAs6BO+DUBH0AD8AqEjgGcG/BS7EE0X31RAApfwW2wAJYAhvgGngCjoCLViYRQBacAZcWPFUqyDPwBkhI8UQAqZXK0rtj4NMyOukJkH2CHZRBd4u8yF5Y+e2/H035r4qstLu2qfuqTARKB03//2TQomFt3rfaVJ1xBcxNed4pqoVWhobvxWozgNUAskRDNB0pfw3clCwrAbxzFFtdI6+lVIrTo4xUE91r2nUGHZUD9NG7KQ8XWULzTlMms1RMDtBCU38390vFNh/KW1uEX89ygD9qDk8F4Nb+EJcDfLlpeeWeR/UuLr8csLMo0ZatwQbfHxooyub7/v8D9gzNRRmX6M9FAAAAAElFTkSuQmCC" 
                          width="40px" height="40px" />
                     </a>
-                    <ul class="dropdown-menu text-small" aria-labelledby="dropdownUser1">
+                    <ul className="dropdown-menu text-small" aria-labelledby="dropdownUser1">
                         <li><a className="dropdown-item" href="#">Profile</a></li>
                         <li><a className="dropdown-item" href="#">Log out</a></li>
                     </ul>
@@ -68,5 +69,8 @@ export default styled(Header)`
     };
     .dropdown-item{
         font-size:20px;
+    }
+    .Linkto{
+        color: black;
     }
 `

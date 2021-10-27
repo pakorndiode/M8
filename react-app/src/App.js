@@ -1,16 +1,18 @@
 import React from "react";
-import Header from "./component/Header";
-import Form from "./component/Form";
-import Footer from "./component/Footer";
-import {} from 'react-bootstrap';
+import Menu from "./page/Menu";
+import CreateMenu from "./page/CreateMenu";
+import {Switch,Route} from 'react-router-dom';
 
 function App() {
   return (
-    <div>
-      <Header />
-      <Form />
-      <Footer />
-    </div>
+    <Switch>
+      <Route path="/CreateMenu">
+        <CreateMenu />
+      </Route>
+      <Route path="/">
+        <Menu />
+      </Route>
+    </Switch>
   );
 }
 

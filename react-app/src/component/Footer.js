@@ -15,15 +15,15 @@ function Footer({className}) {
            <div className="group col-lg-2 col-sm-12 d-flex justify-content-center">
                <div className="fwy">
                     <div className="facebook d-flex">
-                        <box-icon name='facebook-circle' type='logo' color='#0a7ad0' />
+                        <box-icon className='facebook-circle' type='logo' color='#0a7ad0' />
                         facebook
                     </div>
                     <div className="twitter d-flex">
-                        <box-icon name='twitter' type='logo' color='#008fff' />
+                        <box-icon className='twitter' type='logo' color='#008fff' />
                         twitter
                     </div>
                     <div className="youtube d-flex">
-                        <box-icon name='youtube' type='logo'color='#ff0000' />
+                        <box-icon className='youtube' type='logo'color='#ff0000' />
                         YouTube
                     </div>
                 </div>
@@ -36,7 +36,7 @@ export default styled(Footer)`
     background-color:rgba(87, 204, 153, 1);
     display:flex;
     justify-content:center;
-    padding:10px 0px 10px 0px;
+    padding:20px 0px 10px 0px;
     width: 100%;
     font-size:10px;
     position: relative;
