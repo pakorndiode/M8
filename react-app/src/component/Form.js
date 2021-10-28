@@ -21,16 +21,8 @@ function Form ({className}){
     function sendData(event){
         
         event.preventDefault();
-        axios.post("http://localhost:5000/createMenu",{
-                name: name,
-                nationality: nationality,
-                type: type,
-                description :description,
-                calorie: calorie,
-                price: price,
-        })
         
-        /*var textTest = /[a-zA-zก-ฮ]$/
+        var textTest = /[a-zA-zก-ฮ]$/
         var numTest = /\d$/
         var textNTest = /[a-zA-Zก-ฮ\d]$/
 
@@ -79,7 +71,7 @@ function Form ({className}){
                 calorie: calorie,
                 price: price,
             })
-        }*/
+        }
     }
 
     return(
@@ -103,7 +95,7 @@ function Form ({className}){
             </div>
             <div className="form col-12 ">
                 <label className="form"> description </label>
-                <textarea placeholder="ช้าวมันไก่มีความนิยมส่วนมากใน......" onChange={(event)=>{setDescription(event.target.value)}} />
+                <textarea placeholder="ข้าวมันไก่มีความนิยมส่วนมากใน......" onChange={(event)=>{setDescription(event.target.value)}} />
             </div>
             <div className="form col-6 ">
                 <label className="form"> Calorie</label>

@@ -20,21 +20,18 @@ function DetailMenu({className}) {
            {detailFood.map((data,index)=>{
                return (
                     <div className="card col-12 p-5 my-5" value={data.id} key={index}>
-                        <div className="box row col-12">
-                                <label className='titleName col-lg-1 col-sm-2 p-0'>
-                                    Food: 
-                                </label>
-                                <label className='detailName col-lg-11 col-sm-10 p-0'>
-                                    {data.name}
+                        <div className="box d-flex col-12 m-0 p-0">
+                                <div className='p-0'>
+                                    <label className='detailName'>{data.name} </label>
+                                    <label className='bath'>{data.price} บาท</label>
+                                </div>
+                        </div>
+                        <div className="box col-12">
+                                <label className='detail col-lg-12 col-sm-12 p-0'>
+                                    {data.description}
                                 </label>
                         </div>
                         <div className="box row col-12">
-                                <label className='titleDetail col-lg-1 col-sm-12 p-0'>
-                                    Description:
-                                </label>
-                                <label className='detail col-lg-11 col-sm-12 p-0'>
-                                    {data.description}
-                                </label>
                         </div>
                         <div className="three d-flex justify-content-end">
                                 <label className='types t1'>{data.nametype}</label>
@@ -77,6 +74,7 @@ export default styled(DetailMenu)`
         cursor: pointer;
     }
     .detail{
+        color: rgba(92, 89, 89, 1);
         font-size:20px;
         font-weight:lighter;
         cursor: pointer;
@@ -105,6 +103,10 @@ export default styled(DetailMenu)`
     .card:hover{
         background-color:rgba(249, 249, 249, 1);
         cursor: pointer;
+    }
+    .bath{
+        padding-left:20px;
+        font-size:20px;
     }
 
 `
