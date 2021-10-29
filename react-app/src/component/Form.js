@@ -23,7 +23,7 @@ function Form ({className}){
         
         event.preventDefault();
         
-        const textTest = /[a-zA-zก-ฮ]$/
+        const textTest = /[a-zA-zก-ฮ ำ ้]$/
         const numTest = /\d$/
         const textNTest = /[a-zA-Zก-ฮ\d]$/
         const imageURLTest = /^(([h])([t])([t])([p])([s])([:])([/])([/]))([a-zA-Z0-9ก-ฮ])/

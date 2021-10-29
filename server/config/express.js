@@ -34,6 +34,25 @@ app.get("/Home", (req, res) => {
     });
 });
 
+app.get("/filterNationality",(req,res)=>{
+    sql = "SELECT nationality FROM food"
+    connect.query(sql,(err,result) => {
+        if(err) throw err
+
+        return res.status(200).json(result)
+    })
+})
+
+app.get("/filter/Nationality/:nationality", (req, res) => {
+    const nationality = req.params.nationality
+    sql = "SELECT * FROM food WHERE nationality = ?"
+    connect.query(sql,[nationality],(err,result) => {
+        if(err) throw err
+
+        return res.status(200).json(result)
+    })
+})
+
 
 module.exports = (x)=>{
     app.listen(x, () => {
