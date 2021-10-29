@@ -11,6 +11,7 @@ function Form ({className}){
 
     const [name,setName] = useState("ww");
     const [nationality,setNationality] = useState("");
+    const [urlImg, setUrlImg] = useState("");
     const [type, setType] = useState(1);
     const [description, setDescription] = useState("");
     const [calorie, setCalorie] = useState("");
@@ -22,9 +23,10 @@ function Form ({className}){
         
         event.preventDefault();
         
-        var textTest = /[a-zA-zก-ฮ]$/
-        var numTest = /\d$/
-        var textNTest = /[a-zA-Zก-ฮ\d]$/
+        const textTest = /[a-zA-zก-ฮ]$/
+        const numTest = /\d$/
+        const textNTest = /[a-zA-Zก-ฮ\d]$/
+        const imageURLTest = /^(([h])([t])([t])([p])([s])([:])([/])([/]))([a-zA-Z0-9ก-ฮ])/
 
         if (textTest.test(name) == false) {
             Swal.fire({
@@ -39,12 +41,19 @@ function Form ({className}){
                 title: 'Oops...',
                 text: 'Sorry nationality must be letters!'
             })
+        } else if (imageURLTest.test(urlImg) == false) {
+            Swal.fire({
+                icon: 'error',
+                title: 'Oops...',
+                text: 'Sorry image must be imagelink address only!'
+            })
         } else if (textNTest.test(description) == false) {
             Swal.fire({
                 icon: 'error',
                 title: 'Oops...',
                 text: 'Sorry description must be letters or numbers!'
             })
+            console.log('BUG',textNTest.test(description));
         } else if (numTest.test(calorie) == false) {
             Swal.fire({
                 icon: 'error',
@@ -70,6 +79,7 @@ function Form ({className}){
                 description :description,
                 calorie: calorie,
                 price: price,
+                image:urlImg
             })
         }
     }
@@ -84,6 +94,10 @@ function Form ({className}){
             <div className="form col-5 ">
                 <label className="form"> nationality </label>
                 <input type="text" id="nationality" name="nationality" placeholder="ไทย" onChange={(event)=>{setNationality(event.target.value)}} />
+            </div>
+            <div className="form col-12 ">
+                <label className="form"> Url Image </label>
+                <input type="text" id="UrlImage" name="UrlImage" placeholder="http://" onChange={(event)=>{setUrlImg(event.target.value)}} />
             </div>
             <div className="form col-12 ">
                 <label className="form"> Type of foods </label>

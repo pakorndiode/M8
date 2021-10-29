@@ -13,9 +13,10 @@ app.post("/createMenu",(req, res) => {
     const description = req.body.description;
     const calorie = req.body.calorie;
     const price = req.body.price;
+    const image = req.body.image
     
-    sql = "INSERT INTO food (type_id,name,nationality,description,calorie,price) VALUES (?,?,?,?,?,?)"
-    connect.query(sql,[type,name,nationality,description,calorie,price],(err, result) => {
+    sql = "INSERT INTO food (type_id,name,nationality,description,calorie,price,image) VALUES (?,?,?,?,?,?,?)"
+    connect.query(sql,[type,name,nationality,description,calorie,price,image],(err, result) => {
         if (err) throw err
 
         return res.status(200).json({

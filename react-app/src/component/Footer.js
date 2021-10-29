@@ -15,15 +15,15 @@ function Footer({className}) {
            <div className="group col-lg-2 col-sm-12 d-flex justify-content-center">
                <div className="fwy">
                     <div className="facebook d-flex">
-                        <box-icon className='facebook-circle' type='logo' color='#0a7ad0' />
+                        <i class='bx bxl-facebook-circle' color='#0a7ad0' type='logo' />
                         facebook
                     </div>
                     <div className="twitter d-flex">
-                        <box-icon className='twitter' type='logo' color='#008fff' />
+                        <i class='bx bxl-twitter twitter' type='logo' color='#008fff'></i>
                         twitter
                     </div>
                     <div className="youtube d-flex">
-                        <box-icon className='youtube' type='logo'color='#ff0000' />
+                        <i class='bx bxl-youtube' ></i>
                         YouTube
                     </div>
                 </div>
@@ -39,8 +39,6 @@ export default styled(Footer)`
     padding:20px 0px 10px 0px;
     width: 100%;
     font-size:10px;
-    position: relative;
-    bottom: 0;
     .avo{
         font-size:28px;
         color:white;
@@ -61,8 +59,19 @@ export default styled(Footer)`
     .youtube{
         color:white;
     };
-    box-icon{
+    .bxl-facebook-circle{
+        font-size:15px;
         padding-right:5px;
+        color: #0a7ad0;
     }
-    
+    .bxl-twitter{
+        font-size:15px;
+        padding-right:5px;
+        color: #0a7ad0;
+    }
+    .bxl-youtube{
+        font-size:15px;
+        padding-right:5px;
+        color: #ff0000;
+    }
 `
